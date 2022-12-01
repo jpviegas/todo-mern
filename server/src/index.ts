@@ -30,5 +30,5 @@ app.delete('/todos/:todoId', deleteTodoController);
 void mongoose.connect(MONGO_URL ?? '',
 ).then(() => {
   console.log(`on port ${PORT}`);
-  app.listen(PORT);
+  app.listen(process.env.PORT);
 });
