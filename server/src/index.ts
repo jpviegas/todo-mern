@@ -16,6 +16,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/',()=>{
+  console.log('todo mern');
+
+})
+
 app.post('/todos', createTodoController);
 
 app.get('/todos', getTodosController);
@@ -25,5 +30,5 @@ app.delete('/todos/:todoId', deleteTodoController);
 void mongoose.connect(MONGO_URL ?? '',
 ).then(() => {
   console.log(`on port ${PORT}`);
-  app.listen(5000);
+  app.listen(`${PORT}`);
 });
