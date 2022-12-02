@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
-import Todo from './components/Todo';
+import Todo from './components/todo/Todo';
 import './index.css';
 
 const router = createBrowserRouter([

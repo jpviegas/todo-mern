@@ -5,6 +5,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import { createTodoController } from './controllers/createTodoController';
 import { deleteTodoController } from './controllers/deleteTodoController';
+import { editTodoByIdController, getTodoByIdController } from './controllers/getTodoByIdController';
 import { getTodosController } from './controllers/getTodosController';
 
 config();
@@ -23,6 +24,10 @@ app.get('/', (req, res) => {
 app.post('/todos', createTodoController);
 
 app.get('/todos', getTodosController);
+
+app.get('/todos/:todoId', getTodoByIdController);
+
+app.put('/todos/:todoId', editTodoByIdController)
 
 app.delete('/todos/:todoId', deleteTodoController);
 
